@@ -1,0 +1,83 @@
+<!--Execute a web page for movie search. When opening the page, a user can only see an input form for putting in the name (or part of the name) and choosing the type (movie, series, episode).
+
+After the user puts in the data and clicks Search, it is necessary to send a corresponding query to an API resource OMDB (omdbapi.com) using AJAX.  
+
+If you receive a list of movies as a response, it should be displayed below the search form. If there is no match for given parameters, display Movie not found!.
+
+Note that OMDB only returns 10 movies by default. This is why you should execute pagination in case there are more than 10 movies. Pagination is the numeration of pages which is usually located at the top or bottom of a web page. You’ve probably seen numbers 1, 2, 3 etc on online store web pages with products. Clicking those numbers displays different blocks of products. This is pagination. So the first search should return the first 10 movies and a button for moving in between pages. Clicking this button should send a query with needed page in parameters, and the received answer should be displayed instead of the current movie list. 
+
+There should be a Details button next to each movie. Clicking it should display detailed information about the movie. This information should be put out on the same page under the movie list and pagination. 
+
+All the queries need to be sent using AJAX. So clicking any button should not refresh the page. API OMDB link: omdbapi.com (register to get an AP I KEY). Extra API link with movies (in case OMDB doesn’t work): search-movies .  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script async defer src="index.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div id="header-section">
+            <nav id="header-section__navigation">
+                <img id="image1" src="/Cineplex_model/images/Logo- light 1.png" alt="">
+                <ul id="navigate">
+                    <li>Home</li>
+                    <li>Pricing</li>
+                    <li>Movies</li>
+                    <li>Series</li>
+                    <li>Collection</li>
+                    <li>FAQ</li>
+                </ul>
+                <ul id="images">
+                    <a id="Search" href="">
+                        <img src="/Cineplex_model/images/search-interaction.png" alt="">
+                    </a>
+                    <a id="Notification" href="">
+                        <img src="/Cineplex_model/images/Bell-notif interaction.png" alt="">
+                    </a>
+                    <a id="Login" href="">
+                        <img src="/Cineplex_model/images/log in - interaction.png" alt="">
+                    </a>
+                    <a id="Brightness" href="">
+                        <img src="/Cineplex_model/images/sun.png" alt="">
+                    </a>
+                </ul>
+            </nav>
+            <div class="header-information">
+                <h1>The Witcher</h1>
+                <p>Geralt of Rivia, a mutated monster-hunter for hire, journeys toward his destiny in a turbulent world
+                    where people often prove more wicked than beasts
+                </p>
+            </div>
+            <div class="header-information__buttons">
+                <button id="button1"> <img src="" alt=""> Watch movie</button>
+                <button id="button2">More info <img src="" alt=""></button>
+            </div>
+            <div class="header-form">
+                <form action="">
+                    <label for="">Enter the name of the movie</label>
+                    <input id="Name"> <br>
+
+                    <label for="">Is it a movie, series, or episode?</label> <br>
+                    <input type="radio" id="Movie" name="Choose" value="Movie">
+                    <label for="Movie">Movie</label><br>
+
+                    <input type="radio" id="Episode" name="Choose" value="Episode">
+                    <label for="Episode">Episode</label><br>
+
+                    <input type="radio" id="Series" name="Choose" value="Series">
+                    <label for="Series">Series</label>
+                </form>
+            </div>
+        </div>
+    </header>
+    <main></main>
+    <footer></footer>
+</body>
+
+</html>
