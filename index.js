@@ -73,6 +73,17 @@ function fetchMovies(name, type, page) {
             data.Search.forEach(movie => {
                 let div = document.createElement("div");
                 div.innerHTML = `<strong>${movie.Title}</strong> (${movie.Year})`;
+                let favButton = document.createElement("button");
+                favButton.textContent = '❤️';
+                favButton.addEventListener('click', () => {
+                    let fav = JSON.parse(localStorage.getItem("fav"));
+                    if (!fav.includes(movie.imdbID)) {
+                        fav.push(movie.imdbID);
+                    }
+                    localStorage.setItem("fav", JSON.stringify(fav));
+                    alert("Added to favorites!");
+                });
+                div.appendChild(favButton);
                 resultsContainer.appendChild(div);
             });
 
